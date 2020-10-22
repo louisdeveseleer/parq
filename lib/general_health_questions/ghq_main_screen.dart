@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:parq/common_widgets/custom_app_bar.dart';
+import 'package:parq/common_widgets/basic_screen.dart';
 import 'package:parq/general_health_questions/ghq_intro.dart';
 import 'package:parq/general_health_questions/ghq_summary.dart';
 import 'package:parq/general_health_questions/ghq_list_provider.dart';
 import 'package:parq/general_health_questions/ghq_structure.dart';
-import 'package:parq/theme.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart' as neu;
 
@@ -50,37 +49,30 @@ class _GHQMainScreenState extends State<GHQMainScreen> {
       pageController: pageController,
     ));
 
-    return Scaffold(
-      body: SafeArea(
-        child: Container(
-          decoration: backgroundDecoration,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              CustomAppBar(),
-              AnimatedOpacity(
-                duration: Duration(milliseconds: 200),
-                opacity: (currentPosition > 0.8 && currentPosition < 7.2)
-                    ? 1.0
-                    : 0.0,
-                child: QuestionsSlider(
-                  currentPosition: currentPosition,
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  child: ChangeNotifierProvider<GHQList>(
-                    create: (context) => GHQList(),
-                    child: PageView(
-                      controller: pageController,
-                      children: listOfPages,
-                    ),
-                  ),
-                ),
-              ),
-            ],
+    return BasicScreen(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          AnimatedOpacity(
+            duration: Duration(milliseconds: 200),
+            opacity:
+                (currentPosition > 0.8 && currentPosition < 7.2) ? 1.0 : 0.0,
+            child: QuestionsSlider(
+              currentPosition: currentPosition,
+            ),
           ),
-        ),
+          Expanded(
+            child: Container(
+              child: ChangeNotifierProvider<GHQList>(
+                create: (context) => GHQList(),
+                child: PageView(
+                  controller: pageController,
+                  children: listOfPages,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -108,6 +100,10 @@ class QuestionsSlider extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: neu.NeumorphicSlider(
+            style: neu.SliderStyle(
+              accent: Theme.of(context).primaryColor,
+              variant: Theme.of(context).hintColor,
+            ),
             value: currentPosition,
             min: 0,
             max: 7,

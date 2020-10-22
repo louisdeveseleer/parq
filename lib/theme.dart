@@ -2,38 +2,37 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
 TextStyle kTitleStyle = TextStyle(
   fontFamily: 'Roboto',
+  color: Color(0xfff7efe4),
 );
 
 Color accentColor = Color(0xfff5b788);
 Color variantColor = Color(0xff8aaebc);
 
-NeumorphicThemeData themeData = NeumorphicThemeData(
-  baseColor: Color(0xff416678),
+ThemeData themeData = ThemeData(
+    primaryColor: Color(0xff416678),
 
-  // fontFamily: 'Lora',
-  textTheme: TextTheme(
-    bodyText2: kTitleStyle.copyWith(
-      fontSize: 14,
+    // fontFamily: 'Lora',
+    textTheme: TextTheme(
+      bodyText2: kTitleStyle.copyWith(
+        fontSize: 14,
+      ),
+      headline6: kTitleStyle.copyWith(
+        fontSize: 20,
+        height: 1.4,
+      ),
+      subtitle1: kTitleStyle.copyWith(
+        fontSize: 14,
+        height: 1.3,
+      ),
+      button: kTitleStyle.copyWith(
+        color: accentColor,
+        fontWeight: FontWeight.w600,
+        fontSize: 20,
+        height: 1.0,
+      ),
     ),
-    headline6: kTitleStyle.copyWith(
-      fontSize: 20,
-      height: 1.4,
-    ),
-    subtitle1: kTitleStyle.copyWith(
-      fontSize: 14,
-      height: 1.3,
-    ),
-    button: kTitleStyle.copyWith(
-      color: accentColor,
-      fontWeight: FontWeight.w600,
-      fontSize: 20,
-      height: 1.0,
-    ),
-  ),
-  defaultTextColor: Color(0xfff7efe4),
-  accentColor: accentColor,
-  variantColor: variantColor,
-);
+    accentColor: accentColor,
+    hintColor: variantColor);
 
 BoxDecoration backgroundDecoration = BoxDecoration(
   gradient: RadialGradient(

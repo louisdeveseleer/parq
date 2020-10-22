@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/Technical.Sales/AndroidStudioProjects/parq/lib/results/clearance.dart';
 import 'package:parq/common_widgets/my_radio_button.dart';
 import 'package:parq/follow_up_questions/fuq_item_model.dart';
 import 'package:parq/follow_up_questions/fuq_list.dart';
-import 'file:///C:/Users/Technical.Sales/AndroidStudioProjects/parq/lib/results/no_clearance.dart';
+import 'package:parq/results/clearance.dart';
+import 'package:parq/results/no_clearance.dart';
 import 'package:provider/provider.dart';
 
 class FUQSectionContent extends StatefulWidget {
@@ -104,7 +104,7 @@ class _FUQSectionContentState extends State<FUQSectionContent>
               padding: const EdgeInsets.all(16.0),
               child: fuqList.isFirstQuestion()
                   ? Icon(
-                      Icons.arrow_back_outlined,
+                      Icons.arrow_back,
                       color: Colors.transparent,
                     )
                   : InkWell(
@@ -117,7 +117,7 @@ class _FUQSectionContentState extends State<FUQSectionContent>
                       child: Row(
                         children: [
                           Icon(
-                            Icons.arrow_back_outlined,
+                            Icons.arrow_back,
                             color: Theme.of(context).textTheme.button.color,
                           ),
                           SizedBox(

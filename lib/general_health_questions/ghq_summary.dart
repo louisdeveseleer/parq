@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/Technical.Sales/AndroidStudioProjects/parq/lib/results/clearance.dart';
 import 'package:parq/common_widgets/main_button.dart';
 import 'package:parq/general_health_questions/ghq_follow_up.dart';
 import 'package:parq/general_health_questions/ghq_list_provider.dart';
+import 'package:parq/results/clearance.dart';
 import 'package:provider/provider.dart';
 
 class GHQSummary extends StatelessWidget {

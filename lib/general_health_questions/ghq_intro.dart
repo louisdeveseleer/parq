@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/Technical.Sales/AndroidStudioProjects/parq/lib/common_widgets/main_button.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart' as neu;
+import 'package:parq/common_widgets/main_button.dart';
 
 class GHQIntro extends StatefulWidget {
   final VoidCallback callback;
@@ -47,7 +47,7 @@ class _GHQIntroState extends State<GHQIntro>
                   ),
                   // margin: EdgeInsets.all(16),
                   child: Scrollbar(
-                    radius: Radius.circular(2),
+                    // radius: Radius.circular(2),
                     child: SingleChildScrollView(
                       padding: EdgeInsets.all(16.0),
                       child: ConstrainedBox(
@@ -61,8 +61,12 @@ class _GHQIntroState extends State<GHQIntro>
                             Flexible(child: Container()),
                             AnimatedOpacity(
                               child: Text(
-                                'This questionnaire will determine whether you should seek medical advice before increasing the intensity of your physical activity.',
-                                style: Theme.of(context).textTheme.headline6,
+                                'The health benefits of regular physical activity are clear; more people should engage in physical activity every day of the week. Participating in '
+                                'physical activity is very safe for MOST people.',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyText2
+                                    .copyWith(fontSize: 18),
                               ),
                               opacity: controller.value < 0.1 ? 0.0 : 1.0,
                               duration: Duration(milliseconds: 800),
@@ -73,10 +77,11 @@ class _GHQIntroState extends State<GHQIntro>
                             ),
                             AnimatedOpacity(
                               child: Text(
-                                'The health benefits of regular physical activity are clear; more people should engage in physical activity every day of the week. Participating in '
-                                'physical activity is very safe for MOST people. This questionnaire will tell you whether it is necessary for you to seek further advice from your doctor '
-                                'OR a qualified exercise professional before becoming more physically active. ',
-                                style: Theme.of(context).textTheme.subtitle1,
+                                'This questionnaire will determine whether you should seek medical advice before increasing the intensity of your physical activity.',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyText2
+                                    .copyWith(fontSize: 18),
                               ),
                               opacity: controller.value < 0.3 ? 0.0 : 1.0,
                               duration: Duration(milliseconds: 800),
@@ -88,7 +93,10 @@ class _GHQIntroState extends State<GHQIntro>
                             AnimatedOpacity(
                               child: Text(
                                 'Please read the 7 next questions carefully and answer each one honestly.',
-                                style: Theme.of(context).textTheme.headline6,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyText2
+                                    .copyWith(fontSize: 18),
                               ),
                               opacity: controller.value < 0.6 ? 0.0 : 1.0,
                               duration: Duration(milliseconds: 800),
@@ -105,7 +113,7 @@ class _GHQIntroState extends State<GHQIntro>
             ),
           ),
           SizedBox(
-            height: 16,
+            height: 32,
           ),
           MainButton(
             onPressed: widget.callback,

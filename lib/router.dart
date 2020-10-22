@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/Technical.Sales/AndroidStudioProjects/parq/lib/results/clearance.dart';
 import 'package:parq/follow_up_questions/fuq_main_screen.dart';
 import 'package:parq/general_health_questions/ghq_follow_up.dart';
 import 'package:parq/general_health_questions/ghq_main_screen.dart';
 import 'package:page_transition/page_transition.dart';
-import 'file:///C:/Users/Technical.Sales/AndroidStudioProjects/parq/lib/results/no_clearance.dart';
+import 'package:parq/results/clearance.dart';
+import 'package:parq/results/no_clearance.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {

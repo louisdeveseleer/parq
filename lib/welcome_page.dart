@@ -12,73 +12,71 @@ class WelcomePage extends StatelessWidget {
     double iconWidth = min(
         MediaQuery.of(context).size.width, MediaQuery.of(context).size.height);
     return Scaffold(
-      body: SafeArea(
-        child: Container(
-          decoration: backgroundDecoration,
-          child: Stack(
-            children: [
-              Positioned.fromRect(
-                rect: Rect.fromCenter(
-                    center: Offset(
-                      MediaQuery.of(context).size.width - iconWidth / 4,
-                      iconWidth / 4,
-                    ),
-                    width: iconWidth,
-                    height: iconWidth),
-                child: BeatingHeartIcon(
-                  iconWidth: iconWidth,
-                ),
+      body: Container(
+        decoration: backgroundDecoration,
+        child: Stack(
+          children: [
+            Positioned.fromRect(
+              rect: Rect.fromCenter(
+                  center: Offset(
+                    MediaQuery.of(context).size.width - iconWidth / 4,
+                    iconWidth / 4,
+                  ),
+                  width: iconWidth,
+                  height: iconWidth),
+              child: BeatingHeartIcon(
+                iconWidth: iconWidth,
               ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    SizedBox(
-                      height: iconWidth / 2,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  SizedBox(
+                    height: iconWidth / 2,
+                  ),
+                  Text(
+                    '2020 PAR-Q+',
+                    style: kTitleStyle.copyWith(
+                      fontSize: 32,
+                      fontWeight: FontWeight.w600,
                     ),
-                    Text(
-                      '2020 PAR-Q+',
-                      style: kTitleStyle.copyWith(
-                        fontSize: 32,
-                        fontWeight: FontWeight.w600,
-                      ),
-                      textAlign: TextAlign.start,
+                    textAlign: TextAlign.start,
+                  ),
+                  Text(
+                    'The Physical Activity Readiness Questionnaire for Everyone',
+                    style: Theme.of(context).textTheme.headline6.copyWith(
+                          color: Theme.of(context).accentColor,
+                        ),
+                    textAlign: TextAlign.start,
+                  ),
+                  MainButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, GHQMainScreen.id);
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Am I ready ?',
+                          style: Theme.of(context).textTheme.button,
+                          textAlign: TextAlign.center,
+                        ),
+                        Icon(
+                          FontAwesomeIcons.longArrowAltRight,
+                          color: Theme.of(context).textTheme.button.color,
+                          size: 20,
+                        ),
+                      ],
                     ),
-                    Text(
-                      'The Physical Activity Readiness Questionnaire for Everyone',
-                      style: Theme.of(context).textTheme.headline6.copyWith(
-                            color: Theme.of(context).accentColor,
-                          ),
-                      textAlign: TextAlign.start,
-                    ),
-                    MainButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, GHQMainScreen.id);
-                      },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Am I ready ?',
-                            style: Theme.of(context).textTheme.button,
-                            textAlign: TextAlign.center,
-                          ),
-                          Icon(
-                            FontAwesomeIcons.longArrowAltRight,
-                            color: Theme.of(context).textTheme.button.color,
-                            size: 20,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

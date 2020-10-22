@@ -10,8 +10,8 @@ class BulletPoint extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Icon(
-          Icons.circle,
-          size: 10,
+          Icons.check_circle,
+          size: 16,
           color: Colors.white,
         ),
         SizedBox(

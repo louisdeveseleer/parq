@@ -14,7 +14,7 @@ class CustomAppBar extends StatelessWidget {
             icon: Icon(
               FontAwesomeIcons.heartbeat,
             ),
-            color: Theme.of(context).accentColor,
+            color: Theme.of(context).hintColor,
           ),
           SizedBox(
             width: 16,
@@ -22,7 +22,7 @@ class CustomAppBar extends StatelessWidget {
           Text(
             '2020 PAR-Q+',
             style: Theme.of(context).textTheme.headline6.copyWith(
-                  color: Theme.of(context).accentColor,
+                  color: Theme.of(context).hintColor,
                 ),
             textAlign: TextAlign.start,
           ),
