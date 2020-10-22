@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:parq/common_widgets/linear_gradient_mask.dart';
 import 'package:parq/common_widgets/main_button.dart';
 import 'package:parq/general_health_questions/ghq_main_screen.dart';
 import 'package:parq/theme.dart';
@@ -39,16 +38,15 @@ class WelcomePage extends StatelessWidget {
                   ),
                   Text(
                     '2020 PAR-Q+',
-                    style: kTitleStyle.copyWith(
-                      fontSize: 32,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: Theme.of(context).textTheme.headline4.copyWith(
+                          fontWeight: FontWeight.w600,
+                        ),
                     textAlign: TextAlign.start,
                   ),
                   Text(
                     'The Physical Activity Readiness Questionnaire for Everyone',
                     style: Theme.of(context).textTheme.headline6.copyWith(
-                          color: Theme.of(context).accentColor,
+                          color: Theme.of(context).hintColor,
                         ),
                     textAlign: TextAlign.start,
                   ),
@@ -113,7 +111,13 @@ class _BeatingHeartIconState extends State<BeatingHeartIcon>
 
   @override
   Widget build(BuildContext context) {
-    return LinearGradientMask(
+    return ShaderMask(
+      blendMode: BlendMode.srcATop,
+      shaderCallback: (bounds) => LinearGradient(
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        colors: [Color(0xffe7c8a9), Color(0xffC4935A)],
+      ).createShader(bounds),
       child: Icon(
         FontAwesomeIcons.heartbeat,
         size: animation.value,

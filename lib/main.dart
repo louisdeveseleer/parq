@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'PAR-Q+',
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       theme: themeData,
       home: WelcomePage(),
       onGenerateRoute: router.generateRoute,
