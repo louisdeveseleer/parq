@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:parq/common_widgets/my_radio_button.dart';
 import 'package:parq/general_health_questions/ghq_list_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:parq/generated/l10n.dart';
 
 class GHQStructure extends StatelessWidget {
   final VoidCallback callback;
@@ -23,7 +24,7 @@ class GHQStructure extends StatelessWidget {
             children: [
               Text(
                 Provider.of<GHQList>(context, listen: false)
-                    .questions[questionIndex]
+                    .questions(context)[questionIndex]
                     .title,
                 style: Theme.of(context).textTheme.headline6,
               ),
@@ -32,7 +33,7 @@ class GHQStructure extends StatelessWidget {
               ),
               Text(
                 Provider.of<GHQList>(context, listen: false)
-                        .questions[questionIndex]
+                        .questions(context)[questionIndex]
                         .subtitle ??
                     '',
                 style: Theme.of(context).textTheme.subtitle1,
@@ -41,27 +42,27 @@ class GHQStructure extends StatelessWidget {
           ),
           Consumer<GHQList>(
             builder: (context, questionsListProvider, _) {
-              bool groupValue =
-                  questionsListProvider.questions[questionIndex].answer;
+              bool groupValue = questionsListProvider.answers[questionIndex];
               void onChanged(value) {
                 questionsListProvider.setAnswer(value, questionIndex);
                 if (value != null) callback();
               }
 
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              return ButtonBar(
+                alignment: MainAxisAlignment.spaceAround,
+                buttonPadding: EdgeInsets.all(8),
                 children: [
                   MyRadioButton(
                     onChanged: onChanged,
                     groupValue: groupValue,
                     value: true,
-                    text: 'YES',
+                    text: S.of(context).actionButtonYES,
                   ),
                   MyRadioButton(
                     onChanged: onChanged,
                     groupValue: groupValue,
                     value: false,
-                    text: 'NO',
+                    text: S.of(context).actionButtonNO,
                   ),
                 ],
               );

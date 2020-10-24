@@ -4,6 +4,7 @@ import 'package:parq/common_widgets/main_button.dart';
 import 'package:parq/general_health_questions/ghq_main_screen.dart';
 import 'package:parq/theme.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'generated/l10n.dart';
 
 class WelcomePage extends StatelessWidget {
   @override
@@ -44,7 +45,7 @@ class WelcomePage extends StatelessWidget {
                     textAlign: TextAlign.start,
                   ),
                   Text(
-                    'The Physical Activity Readiness Questionnaire for Everyone',
+                    S.of(context).welcomePageSubtitle,
                     style: Theme.of(context).textTheme.headline6.copyWith(
                           color: Theme.of(context).hintColor,
                         ),
@@ -59,7 +60,7 @@ class WelcomePage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          'Am I ready ?',
+                          S.of(context).welcomePageActionButton,
                           style: Theme.of(context).textTheme.button,
                           textAlign: TextAlign.center,
                         ),

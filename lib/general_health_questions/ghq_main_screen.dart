@@ -6,6 +6,7 @@ import 'package:parq/general_health_questions/ghq_list_provider.dart';
 import 'package:parq/general_health_questions/ghq_structure.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart' as neu;
+import 'package:parq/generated/l10n.dart';
 
 class GHQMainScreen extends StatefulWidget {
   static const id = 'general_health_questions';
@@ -92,7 +93,7 @@ class QuestionsSlider extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-          child: Text('Question $currentQuestion of 7'),
+          child: Text(S.of(context).ghqSliderTitle(currentQuestion)),
         ),
         SizedBox(
           height: 8,

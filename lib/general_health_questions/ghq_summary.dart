@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:parq/common_widgets/main_button.dart';
 import 'package:parq/general_health_questions/ghq_follow_up.dart';
+import 'package:parq/general_health_questions/ghq_item_model.dart';
 import 'package:parq/general_health_questions/ghq_list_provider.dart';
 import 'package:parq/results/clearance.dart';
 import 'package:provider/provider.dart';
@@ -11,45 +12,47 @@ class GHQSummary extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<TableRow> tableContent = Provider.of<GHQList>(context, listen: true)
-        .questions
-        .map((questionItem) {
-      int index = Provider.of<GHQList>(context, listen: false)
-          .questions
-          .indexOf(questionItem);
-      return TableRow(
+    List<bool> answers = Provider.of<GHQList>(context, listen: false).answers;
+    List<TableRow> tableContent = [];
+    List<GHQItem> questions =
+        Provider.of<GHQList>(context, listen: true).questions(context);
+    for (int i = 0; i < questions.length; i++) {
+      tableContent.add(
+        TableRow(
           decoration: BoxDecoration(
-            color: index.isEven ? Colors.black12 : Colors.transparent,
+            color: i.isEven ? Colors.black12 : Colors.transparent,
           ),
           children: [
             TableRowInkWell(
               onTap: () {
-                index++;
                 pageController.animateToPage(
-                  index,
+                  i + 1,
                   duration: Duration(milliseconds: 300),
                   curve: Curves.easeInOut,
                 );
               },
               child: Padding(
                 padding: const EdgeInsets.all(6.0),
-                child: Text(questionItem.short),
+                child: Text(questions[i].short),
               ),
             ),
-            questionItem.answer == true
+            answers[i] == true
                 ? Icon(
                     Icons.check,
                     color: Colors.white,
                   )
                 : Container(),
-            questionItem.answer == false
+            answers[i] == false
                 ? Icon(
                     Icons.check,
                     color: Colors.white,
                   )
                 : Container(),
-          ]);
-    }).toList();
+          ],
+        ),
+      );
+    }
+
     tableContent.insert(
         0,
         TableRow(
@@ -91,11 +94,11 @@ class GHQSummary extends StatelessWidget {
         ));
 
     bool testNotComplete = Provider.of<GHQList>(context, listen: false)
-        .questions
-        .any((questionItem) => questionItem.answer == null);
+        .answers
+        .any((answer) => answer == null);
     bool isNotFit = Provider.of<GHQList>(context, listen: false)
-        .questions
-        .any((questionItem) => questionItem.answer == true);
+        .answers
+        .any((answer) => answer == true);
 
     return Padding(
       padding: const EdgeInsets.all(16.0),

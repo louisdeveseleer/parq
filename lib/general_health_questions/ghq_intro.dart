@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart' as neu;
 import 'package:parq/common_widgets/main_button.dart';
+import 'package:parq/generated/l10n.dart';
 
 class GHQIntro extends StatefulWidget {
   final VoidCallback callback;
@@ -61,8 +62,7 @@ class _GHQIntroState extends State<GHQIntro>
                             Flexible(child: Container()),
                             AnimatedOpacity(
                               child: Text(
-                                'The health benefits of regular physical activity are clear; more people should engage in physical activity every day of the week. Participating in '
-                                'physical activity is very safe for MOST people.',
+                                S.of(context).ghqIntroDisclaimer1,
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyText2
@@ -77,7 +77,7 @@ class _GHQIntroState extends State<GHQIntro>
                             ),
                             AnimatedOpacity(
                               child: Text(
-                                'This questionnaire will determine whether you should seek medical advice before increasing the intensity of your physical activity.',
+                                S.of(context).ghqIntroDisclaimer2,
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyText2
@@ -92,7 +92,7 @@ class _GHQIntroState extends State<GHQIntro>
                             ),
                             AnimatedOpacity(
                               child: Text(
-                                'Please read the 7 next questions carefully and answer each one honestly.',
+                                S.of(context).ghqIntroDisclaimer3,
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyText2
@@ -118,7 +118,7 @@ class _GHQIntroState extends State<GHQIntro>
           MainButton(
             onPressed: widget.callback,
             child: Text(
-              'Understood',
+              S.of(context).ghqIntroActionButton,
               style: Theme.of(context).textTheme.button,
               textAlign: TextAlign.center,
             ),
