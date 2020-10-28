@@ -27,7 +27,11 @@
   "ghqQ7Short":"Besoin de supervision médicale",
   "ghqSummaryQuestionTitle": "Question",
   "ghqSummaryYesTitle": "Oui",
-  "ghqSummaryNoTitle": "No,",
+  "ghqSummaryNoTitle": "Non",
   "ghqSummaryActionButtonTitle": "Valider",
-  "ghqSummaryNotComplete": "Certaines questions sont sans réponse."
+  "ghqSummaryNotComplete": "Certaines questions sont sans réponse.",
+  "ghqFollowupText": "Vous avez répondu OUI à certaines questions. Nous avons besoin d'informations complémentaires pour déterminer si vous pouvez augmenter votre activité physique.",
+  "ghqFollowupActionButton": "Okay, allons-y",
+  "fuqPreviousQuestion": "Question précédente"
+
 }

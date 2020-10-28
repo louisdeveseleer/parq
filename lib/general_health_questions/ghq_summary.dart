@@ -5,6 +5,7 @@ import 'package:parq/general_health_questions/ghq_item_model.dart';
 import 'package:parq/general_health_questions/ghq_list_provider.dart';
 import 'package:parq/results/clearance.dart';
 import 'package:provider/provider.dart';
+import 'package:parq/generated/l10n.dart';
 
 class GHQSummary extends StatelessWidget {
   final PageController pageController;
@@ -60,7 +61,7 @@ class GHQSummary extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                'Question',
+                S.of(context).ghqSummaryQuestionTitle,
                 textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme
@@ -71,7 +72,7 @@ class GHQSummary extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                'Yes',
+                S.of(context).ghqSummaryYesTitle,
                 textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme
@@ -82,7 +83,7 @@ class GHQSummary extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                'No',
+                S.of(context).ghqSummaryNoTitle,
                 textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme
@@ -116,7 +117,7 @@ class GHQSummary extends StatelessWidget {
           ),
           if (testNotComplete)
             Text(
-              'Some questions are unanswered.',
+              S.of(context).ghqSummaryNotComplete,
               style: Theme.of(context).textTheme.headline6,
               textAlign: TextAlign.center,
             )
@@ -129,7 +130,7 @@ class GHQSummary extends StatelessWidget {
                   Navigator.pushNamed(context, Clearance.id);
               },
               child: Text(
-                'Validate',
+                S.of(context).ghqSummaryActionButtonTitle,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.button,
               ),

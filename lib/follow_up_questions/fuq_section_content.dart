@@ -5,6 +5,7 @@ import 'package:parq/follow_up_questions/fuq_list.dart';
 import 'package:parq/results/clearance.dart';
 import 'package:parq/results/no_clearance.dart';
 import 'package:provider/provider.dart';
+import 'package:parq/generated/l10n.dart';
 
 class FUQSectionContent extends StatefulWidget {
   @override
@@ -43,7 +44,7 @@ class _FUQSectionContentState extends State<FUQSectionContent>
           groupValue = value;
           _controller.reset();
           _controller.forward().whenComplete(() {
-            fuqList.nextQuestion(value);
+            fuqList.nextQuestion(context,value);
             if (fuqList.isFit == true) {
               fuqList.initialize();
               Navigator.pushNamed(context, Clearance.id);
@@ -55,7 +56,7 @@ class _FUQSectionContentState extends State<FUQSectionContent>
           groupValue = null;
         }
 
-        FUQQuestion currentQuestion = fuqList.currentQuestion;
+        FUQQuestion currentQuestion = fuqList.currentQuestion(context);
 
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -89,13 +90,13 @@ class _FUQSectionContentState extends State<FUQSectionContent>
                   onChanged: onChanged,
                   groupValue: groupValue,
                   value: true,
-                  text: 'YES',
+                  text: S.of(context).actionButtonYES,
                 ),
                 MyRadioButton(
                   onChanged: onChanged,
                   groupValue: groupValue,
                   value: false,
-                  text: 'NO',
+                  text: S.of(context).actionButtonNO,
                 ),
               ],
             ),
@@ -124,7 +125,7 @@ class _FUQSectionContentState extends State<FUQSectionContent>
                             width: 8,
                           ),
                           Text(
-                            'Previous question',
+                            S.of(context).fuqPreviousQuestion,
                             style: TextStyle(
                               color: Theme.of(context).textTheme.button.color,
                             ),

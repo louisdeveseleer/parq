@@ -334,6 +334,196 @@ class S {
       args: [],
     );
   }
+
+  /// `You have answered YES to some questions. Further information is needed to determine your readiness to engage in increased physical activity.`
+  String get ghqFollowupText {
+    return Intl.message(
+      'You have answered YES to some questions. Further information is needed to determine your readiness to engage in increased physical activity.',
+      name: 'ghqFollowupText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Okay, let's go`
+  String get ghqFollowupActionButton {
+    return Intl.message(
+      'Okay, let\'s go',
+      name: 'ghqFollowupActionButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Previous question`
+  String get fuqPreviousQuestion {
+    return Intl.message(
+      'Previous question',
+      name: 'fuqPreviousQuestion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have Arthritis, Osteoporosis, or Back Problems?`
+  String get fuqQ1MainMain {
+    return Intl.message(
+      'Do you have Arthritis, Osteoporosis, or Back Problems?',
+      name: 'fuqQ1MainMain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have difficulty controlling your condition with medications or other physician-prescribed therapies?`
+  String get fuqQ1Sec1Main {
+    return Intl.message(
+      'Do you have difficulty controlling your condition with medications or other physician-prescribed therapies?',
+      name: 'fuqQ1Sec1Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `(Answer NO if you are not currently taking medications or other treatments)`
+  String get fuqQ1Sec1Sub {
+    return Intl.message(
+      '(Answer NO if you are not currently taking medications or other treatments)',
+      name: 'fuqQ1Sec1Sub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have joint problems causing pain, a recent fracture or fracture caused by osteoporosis or cancer, displaced vertebra (e.g., spondylolisthesis), and/or spondylolysis/pars defect (a crack in the bony ring on the back of the spinal column)?`
+  String get fuqQ1Sec2Main {
+    return Intl.message(
+      'Do you have joint problems causing pain, a recent fracture or fracture caused by osteoporosis or cancer, displaced vertebra (e.g., spondylolisthesis), and/or spondylolysis/pars defect (a crack in the bony ring on the back of the spinal column)?',
+      name: 'fuqQ1Sec2Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Have you had steroid injections or taken steroid tablets regularly for more than 3 months?`
+  String get fuqQ1Sec3Main {
+    return Intl.message(
+      'Have you had steroid injections or taken steroid tablets regularly for more than 3 months?',
+      name: 'fuqQ1Sec3Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you currently have Cancer of any kind?`
+  String get fuqQ2MainMain {
+    return Intl.message(
+      'Do you currently have Cancer of any kind?',
+      name: 'fuqQ2MainMain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Does your cancer diagnosis include any of the following types: lung/bronchogenic, multiple myeloma (cancer of plasma cells), head, and/or neck?`
+  String get fuqQ2Sec1Main {
+    return Intl.message(
+      'Does your cancer diagnosis include any of the following types: lung/bronchogenic, multiple myeloma (cancer of plasma cells), head, and/or neck?',
+      name: 'fuqQ2Sec1Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you currently receiving cancer therapy (such as chemotheraphy or radiotherapy)?`
+  String get fuqQ2Sec2Main {
+    return Intl.message(
+      'Are you currently receiving cancer therapy (such as chemotheraphy or radiotherapy)?',
+      name: 'fuqQ2Sec2Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have a Heart or Cardiovascular Condition?`
+  String get fuqQ3MainMain {
+    return Intl.message(
+      'Do you have a Heart or Cardiovascular Condition?',
+      name: 'fuqQ3MainMain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This includes Coronary Artery Disease, Heart Failure, Diagnosed Abnormality of Heart Rhythm.`
+  String get fuqQ3MainSub {
+    return Intl.message(
+      'This includes Coronary Artery Disease, Heart Failure, Diagnosed Abnormality of Heart Rhythm.',
+      name: 'fuqQ3MainSub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have difficulty controlling your condition with medications or other physician-prescribed therapies?`
+  String get fuqQ3Sec1Main {
+    return Intl.message(
+      'Do you have difficulty controlling your condition with medications or other physician-prescribed therapies?',
+      name: 'fuqQ3Sec1Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `(Answer NO if you are not currently taking medications or other treatments)`
+  String get fuqQ3Sec1Sub {
+    return Intl.message(
+      '(Answer NO if you are not currently taking medications or other treatments)',
+      name: 'fuqQ3Sec1Sub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have an irregular heart beat that requires medical management?`
+  String get fuqQ3Sec2Main {
+    return Intl.message(
+      'Do you have an irregular heart beat that requires medical management?',
+      name: 'fuqQ3Sec2Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `(e.g., atrial fibrillation, premature ventricular contraction)`
+  String get fuqQ3Sec2Sub {
+    return Intl.message(
+      '(e.g., atrial fibrillation, premature ventricular contraction)',
+      name: 'fuqQ3Sec2Sub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have chronic heart failure?`
+  String get fuqQ3Sec3Main {
+    return Intl.message(
+      'Do you have chronic heart failure?',
+      name: 'fuqQ3Sec3Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have diagnosed coronary artery (cardiovascular) disease and have not participated in regular physical activity in the last 2 months?`
+  String get fuqQ3Sec3Sub {
+    return Intl.message(
+      'Do you have diagnosed coronary artery (cardiovascular) disease and have not participated in regular physical activity in the last 2 months?',
+      name: 'fuqQ3Sec3Sub',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

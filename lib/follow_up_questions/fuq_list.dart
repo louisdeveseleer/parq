@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:parq/follow_up_questions/fuq_item_model.dart';
+import 'package:parq/generated/l10n.dart';
 
 class FUQList extends ChangeNotifier {
   int _questionIndex;
@@ -23,13 +24,12 @@ class FUQList extends ChangeNotifier {
   bool isFirstQuestion() =>
       (_questionIndex == 0 && _secondaryQuestion == false);
 
-  void nextQuestion(bool answer) {
+  void nextQuestion(BuildContext context, bool answer) {
     if (_secondaryQuestion == false) {
       if (answer == false) {
-        if (_questionIndex < _questions.length - 1) {
+        if (_questionIndex < _questions(context).length - 1) {
           _questionIndex++;
         } else {
-          print('exit questionnaire fit');
           _isFit = true;
         }
       } else if (answer == true) {
@@ -39,19 +39,17 @@ class FUQList extends ChangeNotifier {
     } else if (_secondaryQuestion == true) {
       if (answer == false) {
         if (_secondaryIndex <
-            _questions[_questionIndex].secondaryQuestion.length - 1) {
+            _questions(context)[_questionIndex].secondaryQuestion.length - 1) {
           _secondaryIndex++;
         } else {
-          if (_questionIndex < _questions.length - 1) {
+          if (_questionIndex < _questions(context).length - 1) {
             _secondaryQuestion = false;
             _questionIndex++;
           } else {
-            print('exit questionnaire fit');
             _isFit = true;
           }
         }
       } else if (answer == true) {
-        print('exit questionnaire not fit');
         _isFit = false;
       }
     }
@@ -70,75 +68,47 @@ class FUQList extends ChangeNotifier {
     notifyListeners();
   }
 
-  FUQQuestion get currentQuestion {
+  FUQQuestion currentQuestion(BuildContext context) {
     if (_secondaryQuestion == false)
-      return _questions[_questionIndex].mainQuestion;
+      return _questions(context)[_questionIndex].mainQuestion;
     else
-      return _questions[_questionIndex].secondaryQuestion[_secondaryIndex];
+      return _questions(context)[_questionIndex]
+          .secondaryQuestion[_secondaryIndex];
   }
 
-  List<FUQItem> _questions = [
-    FUQItem(
-      mainQuestion: FUQQuestion(
-          main: 'Do you have Arthritis, Osteoporosis, or Back Problems?'),
-      secondaryQuestion: [
-        FUQQuestion(
-            main:
-                'Do you have difficulty controlling your condition with medications or other physician-prescribed therapies?',
-            sub:
-                '(Answer NO if you are not currently taking medications or other treatments)'),
-        FUQQuestion(
-            main:
-                'Do you have joint problems causing pain, a recent fracture or fracture caused by osteoporosis or cancer, '
-                'displaced vertebra (e.g., spondylolisthesis), and/or spondylolysis/pars defect (a crack in the bony ring on the '
-                'back of the spinal column)? '),
-        FUQQuestion(
-            main:
-                'Have you had steroid injections or taken steroid tablets regularly for more than 3 months? '),
-      ],
-    ),
-    FUQItem(
-      mainQuestion:
-          FUQQuestion(main: 'Do you currently have Cancer of any kind?'),
-      secondaryQuestion: [
-        FUQQuestion(
-          main:
-              'Does your cancer diagnosis include any of the following types: lung/bronchogenic, multiple myeloma (cancer of '
-              'plasma cells), head, and/or neck?',
-        ),
-        FUQQuestion(
-          main:
-              'Are you currently receiving cancer therapy (such as chemotheraphy or radiotherapy)?',
-        )
-      ],
-    ),
-    FUQItem(
-      mainQuestion: FUQQuestion(
-        main: 'Do you have a Heart or Cardiovascular Condition?',
-        sub: 'This includes Coronary Artery Disease, Heart Failure, '
-            'Diagnosed Abnormality of Heart Rhythm',
+  static List<FUQItem> _questions(BuildContext context) {
+    return [
+      FUQItem(
+        mainQuestion: FUQQuestion(main: S.of(context).fuqQ1MainMain),
+        secondaryQuestion: [
+          FUQQuestion(
+              main: S.of(context).fuqQ1Sec1Main,
+              sub: S.of(context).fuqQ1Sec1Sub),
+          FUQQuestion(main: S.of(context).fuqQ1Sec2Main),
+          FUQQuestion(main: S.of(context).fuqQ1Sec3Main),
+        ],
       ),
-      secondaryQuestion: [
-        FUQQuestion(
-          main:
-              'Do you have difficulty controlling your condition with medications or other physician-prescribed therapies? ',
-          sub:
-              '(Answer NO if you are not currently taking medications or other treatments)',
-        ),
-        FUQQuestion(
-          main:
-              'Do you have an irregular heart beat that requires medical management? ',
-          sub: '(e.g., atrial fibrillation, premature ventricular contraction)',
-        ),
-        FUQQuestion(
-          main: 'Do you have chronic heart failure?',
-        ),
-        FUQQuestion(
-          main:
-              'Do you have diagnosed coronary artery (cardiovascular) disease and have not participated in regular physical '
-              'activity in the last 2 months?',
-        ),
-      ],
-    ),
-  ];
+      FUQItem(
+        mainQuestion: FUQQuestion(main: S.of(context).fuqQ2MainMain),
+        secondaryQuestion: [
+          FUQQuestion(main: S.of(context).fuqQ2Sec1Main),
+          FUQQuestion(main: S.of(context).fuqQ2Sec2Main),
+        ],
+      ),
+      FUQItem(
+        mainQuestion: FUQQuestion(
+            main: S.of(context).fuqQ3MainMain, sub: S.of(context).fuqQ3MainSub),
+        secondaryQuestion: [
+          FUQQuestion(
+              main: S.of(context).fuqQ3Sec1Main,
+              sub: S.of(context).fuqQ3Sec1Sub),
+          FUQQuestion(
+              main: S.of(context).fuqQ3Sec2Main,
+              sub: S.of(context).fuqQ3Sec2Sub),
+          FUQQuestion(main: S.of(context).fuqQ3Sec3Main),
+          FUQQuestion(main: S.of(context).fuqQ3Sec3Sub),
+        ],
+      ),
+    ];
+  }
 }

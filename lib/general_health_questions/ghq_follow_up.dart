@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:parq/common_widgets/basic_screen.dart';
 import 'package:parq/common_widgets/main_button.dart';
 import 'package:parq/follow_up_questions/fuq_main_screen.dart';
+import 'package:parq/generated/l10n.dart';
 
 class GHQFollowUp extends StatelessWidget {
   static const id = 'ghq_follow_up';
@@ -15,7 +16,7 @@ class GHQFollowUp extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
-              'You have answered YES to some questions. Further information is needed to determine your readiness to engage in increased physical activity.',
+              S.of(context).ghqFollowupText,
               style: Theme.of(context).textTheme.headline6,
             ),
             MainButton(
@@ -23,7 +24,7 @@ class GHQFollowUp extends StatelessWidget {
                 Navigator.pushNamed(context, FUQMainScreen.id);
               },
               child: Text(
-                'Okay, let\'s go',
+                S.of(context).ghqFollowupActionButton,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.button,
               ),
