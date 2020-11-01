@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_neumorphic/flutter_neumorphic.dart' as neu;
 
 class MyRadioButton extends StatelessWidget {
   final Function onChanged;
@@ -15,21 +14,21 @@ class MyRadioButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return neu.NeumorphicRadio(
-      value: value,
-      groupValue: groupValue,
-      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
-      onChanged: (value) => onChanged(value),
+    return RaisedButton(
+      shape: StadiumBorder(
+        side: BorderSide(
+          color: Theme.of(context).accentColor,
+          width: 1,
+        ),
+      ),
+      color: value == groupValue
+          ? Theme.of(context).primaryColor
+          : Theme.of(context).primaryColorDark,
+      onPressed: () => onChanged(value),
+      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 30),
       child: Text(
         text,
         style: Theme.of(context).textTheme.button,
-      ),
-      style: neu.NeumorphicRadioStyle(
-        unselectedColor: Colors.transparent,
-        selectedColor: Colors.black12,
-        shape: neu.NeumorphicShape.convex,
-        boxShape: neu.NeumorphicBoxShape.stadium(),
-        intensity: 0.5,
       ),
     );
   }

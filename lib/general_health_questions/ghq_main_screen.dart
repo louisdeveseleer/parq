@@ -5,7 +5,6 @@ import 'package:parq/general_health_questions/ghq_summary.dart';
 import 'package:parq/general_health_questions/ghq_list_provider.dart';
 import 'package:parq/general_health_questions/ghq_structure.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_neumorphic/flutter_neumorphic.dart' as neu;
 import 'package:parq/generated/l10n.dart';
 
 class GHQMainScreen extends StatefulWidget {
@@ -54,13 +53,12 @@ class _GHQMainScreenState extends State<GHQMainScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          AnimatedOpacity(
-            duration: Duration(milliseconds: 200),
-            opacity:
-                (currentPosition > 0.8 && currentPosition < 7.2) ? 1.0 : 0.0,
-            child: QuestionsSlider(
-              currentPosition: currentPosition,
-            ),
+          SizedBox(
+            height: 8,
+          ),
+          QuestionsSlider(
+            pageController: pageController,
+            currentPosition: currentPosition,
           ),
           Expanded(
             child: Container(
@@ -81,7 +79,11 @@ class _GHQMainScreenState extends State<GHQMainScreen> {
 
 class QuestionsSlider extends StatelessWidget {
   final double currentPosition;
-  QuestionsSlider({@required this.currentPosition});
+  final PageController pageController;
+  QuestionsSlider({
+    @required this.currentPosition,
+    @required this.pageController,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -91,24 +93,31 @@ class QuestionsSlider extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-          child: Text(S.of(context).ghqSliderTitle(currentQuestion)),
+        AnimatedOpacity(
+          duration: Duration(milliseconds: 200),
+          opacity: (currentPosition > 0.8 && currentPosition < 7.2) ? 1.0 : 0.0,
+          child: Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+            child: Text(S.of(context).ghqSliderTitle(currentQuestion)),
+          ),
         ),
         SizedBox(
           height: 8,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: neu.NeumorphicSlider(
-            style: neu.SliderStyle(
-              accent: Theme.of(context).primaryColor,
-              variant: Theme.of(context).hintColor,
-            ),
+          child: Slider(
+            activeColor: Theme.of(context).accentColor,
+            inactiveColor: Theme.of(context).accentColor.withOpacity(0.2),
+            onChanged: (double newValue) => (pageController.animateToPage(
+              newValue.toInt(),
+              curve: Curves.linear,
+              duration: Duration(milliseconds: 200),
+            )),
             value: currentPosition,
             min: 0,
-            max: 7,
-            thumb: neu.Neumorphic(),
+            max: 8,
           ),
         ),
       ],

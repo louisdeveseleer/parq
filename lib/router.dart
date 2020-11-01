@@ -5,9 +5,16 @@ import 'package:parq/general_health_questions/ghq_main_screen.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:parq/results/clearance.dart';
 import 'package:parq/results/no_clearance.dart';
+import 'package:parq/welcome_page.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
+    case WelcomePage.id:
+      return PageTransition(
+        child: WelcomePage(),
+        type: PageTransitionType.fade,
+      );
+
     case GHQMainScreen.id:
       return PageTransition(
         child: GHQMainScreen(),

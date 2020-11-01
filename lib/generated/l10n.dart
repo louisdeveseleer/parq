@@ -524,6 +524,476 @@ class S {
       args: [],
     );
   }
+
+  /// `Do you currently have High Blood Pressure?`
+  String get fuqQ4MainMain {
+    return Intl.message(
+      'Do you currently have High Blood Pressure?',
+      name: 'fuqQ4MainMain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have difficulty controlling your condition with medications or other physician-prescribed therapies?`
+  String get fuqQ4Sec1Main {
+    return Intl.message(
+      'Do you have difficulty controlling your condition with medications or other physician-prescribed therapies?',
+      name: 'fuqQ4Sec1Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `(Answer NO if you are not currently taking medications or other treatments)`
+  String get fuqQ4Sec1Sub {
+    return Intl.message(
+      '(Answer NO if you are not currently taking medications or other treatments)',
+      name: 'fuqQ4Sec1Sub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have a resting blood pressure equal to or greater than 160/90 mmHg with or without medication?`
+  String get fuqQ4Sec2Main {
+    return Intl.message(
+      'Do you have a resting blood pressure equal to or greater than 160/90 mmHg with or without medication?',
+      name: 'fuqQ4Sec2Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `(Answer YES if you do not know your resting blood pressure)`
+  String get fuqQ4Sec2Sub {
+    return Intl.message(
+      '(Answer YES if you do not know your resting blood pressure)',
+      name: 'fuqQ4Sec2Sub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have any Metabolic Conditions?`
+  String get fuqQ5MainMain {
+    return Intl.message(
+      'Do you have any Metabolic Conditions?',
+      name: 'fuqQ5MainMain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This includes Type 1 Diabetes, Type 2 Diabetes, Pre-Diabetes`
+  String get fuqQ5MainSub {
+    return Intl.message(
+      'This includes Type 1 Diabetes, Type 2 Diabetes, Pre-Diabetes',
+      name: 'fuqQ5MainSub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you often have difficulty controlling your blood sugar levels with foods, medications, or other physician-prescribed therapies?`
+  String get fuqQ5Sec1Main {
+    return Intl.message(
+      'Do you often have difficulty controlling your blood sugar levels with foods, medications, or other physician-prescribed therapies?',
+      name: 'fuqQ5Sec1Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you often suffer from signs and symptoms of low blood sugar (hypoglycemia) following exercise and/or during activities of daily living?`
+  String get fuqQ5Sec2Main {
+    return Intl.message(
+      'Do you often suffer from signs and symptoms of low blood sugar (hypoglycemia) following exercise and/or during activities of daily living?',
+      name: 'fuqQ5Sec2Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Signs of hypoglycemia may include shakiness, nervousness, unusual irritability, abnormal sweating, dizziness or light-headedness, mental confusion, difficulty speaking, weakness, or sleepiness.`
+  String get fuqQ5Sec2Sub {
+    return Intl.message(
+      'Signs of hypoglycemia may include shakiness, nervousness, unusual irritability, abnormal sweating, dizziness or light-headedness, mental confusion, difficulty speaking, weakness, or sleepiness.',
+      name: 'fuqQ5Sec2Sub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have any signs or symptoms of diabetes complications such as heart or vascular disease and/or complications affecting your eyes, kidneys, OR the sensation in your toes and feet?`
+  String get fuqQ5Sec3Main {
+    return Intl.message(
+      'Do you have any signs or symptoms of diabetes complications such as heart or vascular disease and/or complications affecting your eyes, kidneys, OR the sensation in your toes and feet?',
+      name: 'fuqQ5Sec3Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have other metabolic conditions (such as current pregnancy-related diabetes, chronic kidney disease, or liver problems)?`
+  String get fuqQ5Sec4Main {
+    return Intl.message(
+      'Do you have other metabolic conditions (such as current pregnancy-related diabetes, chronic kidney disease, or liver problems)?',
+      name: 'fuqQ5Sec4Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you planning to engage in what for you is unusually high (or vigorous) intensity exercise in the near future?`
+  String get fuqQ5Sec5Main {
+    return Intl.message(
+      'Are you planning to engage in what for you is unusually high (or vigorous) intensity exercise in the near future?',
+      name: 'fuqQ5Sec5Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have any Mental Health Problems or Learning Difficulties?`
+  String get fuqQ6MainMain {
+    return Intl.message(
+      'Do you have any Mental Health Problems or Learning Difficulties?',
+      name: 'fuqQ6MainMain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` This includes Alzheimer’s, Dementia, Depression, Anxiety Disorder, Eating Disorder, Psychotic Disorder, Intellectual Disability, Down Syndrome`
+  String get fuqQ6MainSub {
+    return Intl.message(
+      ' This includes Alzheimer’s, Dementia, Depression, Anxiety Disorder, Eating Disorder, Psychotic Disorder, Intellectual Disability, Down Syndrome',
+      name: 'fuqQ6MainSub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have difficulty controlling your condition with medications or other physician-prescribed therapies?`
+  String get fuqQ6Sec1Main {
+    return Intl.message(
+      'Do you have difficulty controlling your condition with medications or other physician-prescribed therapies?',
+      name: 'fuqQ6Sec1Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `(Answer NO if you are not currently taking medications or other treatments)`
+  String get fuqQ6Sec1Sub {
+    return Intl.message(
+      '(Answer NO if you are not currently taking medications or other treatments)',
+      name: 'fuqQ6Sec1Sub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have Down Syndrome AND back problems affecting nerves or muscles?`
+  String get fuqQ6Sec2Main {
+    return Intl.message(
+      'Do you have Down Syndrome AND back problems affecting nerves or muscles?',
+      name: 'fuqQ6Sec2Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have a Respiratory Disease?`
+  String get fuqQ7MainMain {
+    return Intl.message(
+      'Do you have a Respiratory Disease?',
+      name: 'fuqQ7MainMain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This includes Chronic Obstructive Pulmonary Disease, Asthma, Pulmonary High Blood Pressure`
+  String get fuqQ7MainSub {
+    return Intl.message(
+      'This includes Chronic Obstructive Pulmonary Disease, Asthma, Pulmonary High Blood Pressure',
+      name: 'fuqQ7MainSub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have difficulty controlling your condition with medications or other physician-prescribed therapies?`
+  String get fuqQ7Sec1Main {
+    return Intl.message(
+      'Do you have difficulty controlling your condition with medications or other physician-prescribed therapies?',
+      name: 'fuqQ7Sec1Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `(Answer NO if you are not currently taking medications or other treatments)`
+  String get fuqQ7Sec1Sub {
+    return Intl.message(
+      '(Answer NO if you are not currently taking medications or other treatments)',
+      name: 'fuqQ7Sec1Sub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Has your doctor ever said your blood oxygen level is low at rest or during exercise and/or that you require supplemental oxygen therapy?`
+  String get fuqQ7Sec2Main {
+    return Intl.message(
+      'Has your doctor ever said your blood oxygen level is low at rest or during exercise and/or that you require supplemental oxygen therapy?',
+      name: 'fuqQ7Sec2Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If asthmatic, do you currently have symptoms of chest tightness, wheezing, laboured breathing, consistent cough (more than 2 days/week), or have you used your rescue medication more than twice in the last week?`
+  String get fuqQ7Sec3Main {
+    return Intl.message(
+      'If asthmatic, do you currently have symptoms of chest tightness, wheezing, laboured breathing, consistent cough (more than 2 days/week), or have you used your rescue medication more than twice in the last week?',
+      name: 'fuqQ7Sec3Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Has your doctor ever said you have high blood pressure in the blood vessels of your lungs?`
+  String get fuqQ7Sec4Main {
+    return Intl.message(
+      'Has your doctor ever said you have high blood pressure in the blood vessels of your lungs?',
+      name: 'fuqQ7Sec4Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have a Spinal Cord Injury?`
+  String get fuqQ8MainMain {
+    return Intl.message(
+      'Do you have a Spinal Cord Injury?',
+      name: 'fuqQ8MainMain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This includes Tetraplegia and Paraplegia`
+  String get fuqQ8MainSub {
+    return Intl.message(
+      'This includes Tetraplegia and Paraplegia',
+      name: 'fuqQ8MainSub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have difficulty controlling your condition with medications or other physician-prescribed therapies?`
+  String get fuqQ8Sec1Main {
+    return Intl.message(
+      'Do you have difficulty controlling your condition with medications or other physician-prescribed therapies?',
+      name: 'fuqQ8Sec1Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `(Answer NO if you are not currently taking medications or other treatments)`
+  String get fuqQ8Sec1Sub {
+    return Intl.message(
+      '(Answer NO if you are not currently taking medications or other treatments)',
+      name: 'fuqQ8Sec1Sub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you commonly exhibit low resting blood pressure significant enough to cause dizziness, light-headedness, and/or fainting?`
+  String get fuqQ8Sec2Main {
+    return Intl.message(
+      'Do you commonly exhibit low resting blood pressure significant enough to cause dizziness, light-headedness, and/or fainting?',
+      name: 'fuqQ8Sec2Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Has your physician indicated that you exhibit sudden bouts of high blood pressure (known as Autonomic Dysreflexia)?`
+  String get fuqQ8Sec3Main {
+    return Intl.message(
+      'Has your physician indicated that you exhibit sudden bouts of high blood pressure (known as Autonomic Dysreflexia)?',
+      name: 'fuqQ8Sec3Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Have you had a Stroke?`
+  String get fuqQ9MainMain {
+    return Intl.message(
+      'Have you had a Stroke?',
+      name: 'fuqQ9MainMain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This includes Transient Ischemic Attack (TIA) or Cerebrovascular Event`
+  String get fuqQ9MainSub {
+    return Intl.message(
+      'This includes Transient Ischemic Attack (TIA) or Cerebrovascular Event',
+      name: 'fuqQ9MainSub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have difficulty controlling your condition with medications or other physician-prescribed therapies?`
+  String get fuqQ9Sec1Main {
+    return Intl.message(
+      'Do you have difficulty controlling your condition with medications or other physician-prescribed therapies?',
+      name: 'fuqQ9Sec1Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `(Answer NO if you are not currently taking medications or other treatments)`
+  String get fuqQ9Sec1Sub {
+    return Intl.message(
+      '(Answer NO if you are not currently taking medications or other treatments)',
+      name: 'fuqQ9Sec1Sub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have any impairment in walking or mobility?`
+  String get fuqQ9Sec2Main {
+    return Intl.message(
+      'Do you have any impairment in walking or mobility?',
+      name: 'fuqQ9Sec2Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Have you experienced a stroke or impairment in nerves or muscles in the past 6 months?`
+  String get fuqQ9Sec3Main {
+    return Intl.message(
+      'Have you experienced a stroke or impairment in nerves or muscles in the past 6 months?',
+      name: 'fuqQ9Sec3Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have any other medical condition not listed above or do you have two or more medical conditions?`
+  String get fuqQ10MainMain {
+    return Intl.message(
+      'Do you have any other medical condition not listed above or do you have two or more medical conditions?',
+      name: 'fuqQ10MainMain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Have you experienced a blackout, fainted, or lost consciousness as a result of a head injury within the last 12 months OR have you had a diagnosed concussion within the last 12 months?`
+  String get fuqQ10Sec1Main {
+    return Intl.message(
+      'Have you experienced a blackout, fainted, or lost consciousness as a result of a head injury within the last 12 months OR have you had a diagnosed concussion within the last 12 months?',
+      name: 'fuqQ10Sec1Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have a medical condition that is not listed (such as epilepsy, neurological conditions, kidney problems)?`
+  String get fuqQ10Sec2Main {
+    return Intl.message(
+      'Do you have a medical condition that is not listed (such as epilepsy, neurological conditions, kidney problems)?',
+      name: 'fuqQ10Sec2Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you currently live with two or more medical conditions?`
+  String get fuqQ10Sec3Main {
+    return Intl.message(
+      'Do you currently live with two or more medical conditions?',
+      name: 'fuqQ10Sec3Main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `It is recommended that you visit a qualified exercise professional before becoming more physically active.`
+  String get noClearance {
+    return Intl.message(
+      'It is recommended that you visit a qualified exercise professional before becoming more physically active.',
+      name: 'noClearance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your are cleared for physical activity`
+  String get clearanceTitle {
+    return Intl.message(
+      'Your are cleared for physical activity',
+      name: 'clearanceTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start becoming more physically active – start slowly and build up gradually.`
+  String get clearanceSub1 {
+    return Intl.message(
+      'Start becoming more physically active – start slowly and build up gradually.',
+      name: 'clearanceSub1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If you are over the age of 45 years and NOT accustomed to regular vigorous to maximal effort exercise, consult a qualified exercise professional before engaging in this intensity of exercise.`
+  String get clearanceSub2 {
+    return Intl.message(
+      'If you are over the age of 45 years and NOT accustomed to regular vigorous to maximal effort exercise, consult a qualified exercise professional before engaging in this intensity of exercise.',
+      name: 'clearanceSub2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delay becoming more active if you have a temporary illness, if your are pregnant or if your health changes.`
+  String get clearanceSub3 {
+    return Intl.message(
+      'Delay becoming more active if you have a temporary illness, if your are pregnant or if your health changes.',
+      name: 'clearanceSub3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If you have any further questions, contact a qualified exercise professional.`
+  String get clearanceSub4 {
+    return Intl.message(
+      'If you have any further questions, contact a qualified exercise professional.',
+      name: 'clearanceSub4',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

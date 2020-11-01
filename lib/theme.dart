@@ -1,11 +1,14 @@
-import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:flutter/material.dart';
 
 Color accentColor = Color(0xfff5b788);
 Color variantColor = Color(0xff8aaebc);
+Color primaryColor = Color(0xff416678);
+Color primaryColorDark = Color(0xff2b4b5a);
 
 ThemeData themeData = ThemeData(
   brightness: Brightness.dark,
-  primaryColor: Color(0xff416678),
+  primaryColor: primaryColor,
+  primaryColorDark: primaryColorDark,
   // fontFamily: 'Lora',
   textTheme: TextTheme(
     bodyText2: TextStyle(
@@ -35,8 +38,8 @@ BoxDecoration backgroundDecoration = BoxDecoration(
     center: Alignment.topLeft,
     radius: 1.0,
     colors: [
-      const Color(0xff416678),
-      const Color(0xff2b4b5a),
+      primaryColor,
+      primaryColorDark,
     ], // red to yellow
   ),
 );

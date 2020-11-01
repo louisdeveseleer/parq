@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:parq/common_widgets/my_radio_button.dart';
+import 'package:parq/common_widgets/scroll_column_expandable.dart';
 import 'package:parq/general_health_questions/ghq_list_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:parq/generated/l10n.dart';
@@ -16,7 +17,7 @@ class GHQStructure extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: Column(
+      child: ScrollColumnExpandable(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [

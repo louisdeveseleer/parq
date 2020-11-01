@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:parq/common_widgets/basic_screen.dart';
+import 'package:parq/generated/l10n.dart';
+import 'package:parq/results/final_screen_buttons.dart';
 
 class NoClearance extends StatefulWidget {
   static const id = 'no_clearance';
@@ -51,9 +53,10 @@ class _NoClearanceState extends State<NoClearance>
               ),
             ),
             Text(
-              'It is recommended that you visit a qualified exercise professional before becoming more physically active.',
+              S.of(context).noClearance,
               style: Theme.of(context).textTheme.headline6,
             ),
+            FinalScreenButtons(),
           ],
         ),
       ),

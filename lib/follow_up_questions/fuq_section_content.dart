@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:parq/common_widgets/my_radio_button.dart';
+import 'package:parq/common_widgets/scroll_column_expandable.dart';
 import 'package:parq/follow_up_questions/fuq_item_model.dart';
 import 'package:parq/follow_up_questions/fuq_list.dart';
 import 'package:parq/results/clearance.dart';
@@ -44,7 +45,7 @@ class _FUQSectionContentState extends State<FUQSectionContent>
           groupValue = value;
           _controller.reset();
           _controller.forward().whenComplete(() {
-            fuqList.nextQuestion(context,value);
+            fuqList.nextQuestion(context, value);
             if (fuqList.isFit == true) {
               fuqList.initialize();
               Navigator.pushNamed(context, Clearance.id);
@@ -58,7 +59,7 @@ class _FUQSectionContentState extends State<FUQSectionContent>
 
         FUQQuestion currentQuestion = fuqList.currentQuestion(context);
 
-        return Column(
+        return ScrollColumnExpandable(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -69,6 +70,7 @@ class _FUQSectionContentState extends State<FUQSectionContent>
                 duration: Duration(milliseconds: animationDuration),
                 opacity: _controller.value < 1 ? 0.0 : 1.0,
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       currentQuestion.main,

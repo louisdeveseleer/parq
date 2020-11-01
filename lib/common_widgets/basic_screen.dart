@@ -14,10 +14,34 @@ class BasicScreen extends StatelessWidget {
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisSize: MainAxisSize.max,
             children: [
               CustomAppBar(),
               Expanded(
-                child: child,
+                child: Container(),
+              ),
+              Expanded(
+                flex: 10,
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16)),
+                      color: Colors.transparent,
+                      elevation: 1,
+                      child: Container(
+                        // padding: EdgeInsets.all(16),
+                        width: 450,
+                        height: 600,
+                        child: child,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Container(),
               ),
             ],
           ),

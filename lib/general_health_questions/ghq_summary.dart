@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:parq/common_widgets/main_button.dart';
+import 'package:parq/common_widgets/scroll_column_expandable.dart';
 import 'package:parq/general_health_questions/ghq_follow_up.dart';
 import 'package:parq/general_health_questions/ghq_item_model.dart';
 import 'package:parq/general_health_questions/ghq_list_provider.dart';
@@ -103,7 +104,7 @@ class GHQSummary extends StatelessWidget {
 
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: Column(
+      child: ScrollColumnExpandable(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -122,17 +123,20 @@ class GHQSummary extends StatelessWidget {
               textAlign: TextAlign.center,
             )
           else
-            MainButton(
-              onPressed: () {
-                if (isNotFit)
-                  Navigator.pushNamed(context, GHQFollowUp.id);
-                else
-                  Navigator.pushNamed(context, Clearance.id);
-              },
-              child: Text(
-                S.of(context).ghqSummaryActionButtonTitle,
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.button,
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: MainButton(
+                onPressed: () {
+                  if (isNotFit)
+                    Navigator.pushNamed(context, GHQFollowUp.id);
+                  else
+                    Navigator.pushNamed(context, Clearance.id);
+                },
+                child: Text(
+                  S.of(context).ghqSummaryActionButtonTitle,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.button,
+                ),
               ),
             ),
         ],

@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      locale: DevicePreview.of(context).locale, // <--- /!\ Add the locale
+      locale: DevicePreview.of(context).locale,
       builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
       title: 'PAR-Q+',
