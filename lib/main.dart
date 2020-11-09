@@ -10,7 +10,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 void main() {
   runApp(
     DevicePreview(
-      enabled: !kReleaseMode,
+      enabled: kReleaseMode,
       builder: (context) => MyApp(),
     ),
   );
