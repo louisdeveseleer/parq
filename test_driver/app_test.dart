@@ -43,9 +43,10 @@ void main() {
 
     void launchTest({String locale: 'en'}) {
       test('test whole app', () async {
-//change language
-        await takeScreenshot(driver, '$locale-welcomeScreen');
         await driver.runUnsynchronized(() async {
+          await tapButton(Keys.languageDropdownButton);
+          await tapButton(locale);
+          await takeScreenshot(driver, '$locale-welcomeScreen');
           await tapButton(Keys.welcomePageButton);
         });
         await tapButton(Keys.ghqIntroButton);

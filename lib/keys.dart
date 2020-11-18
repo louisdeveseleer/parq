@@ -10,4 +10,5 @@ class Keys {
   static const String ghqFollowUpButton = 'ghqFollowUpButton';
   static const String fuqYesButton = 'fuqYesButton';
   static const String fuqNoButton = 'fuqNoButton';
+  static const String languageDropdownButton = 'languageDropdownButton';
 }

@@ -43,7 +43,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 ),
               ),
               Positioned(
-                top: 20,
+                bottom: 20,
                 left: 8,
                 child: Row(
                   children: [
@@ -142,6 +142,7 @@ class LanguageDropdown extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: DropdownButton<String>(
+        key: Key(Keys.languageDropdownButton),
         value: Intl.getCurrentLocale(),
         onChanged: (String newValue) {
           callback();
@@ -150,6 +151,7 @@ class LanguageDropdown extends StatelessWidget {
         items: S.delegate.supportedLocales
             .map<DropdownMenuItem<String>>((Locale locale) {
           return DropdownMenuItem<String>(
+            key: Key(locale.languageCode),
             value: locale.languageCode,
             child: Text(locale.languageCode),
           );
