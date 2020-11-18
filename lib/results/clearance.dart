@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:parq/common_widgets/basic_screen.dart';
 import 'package:parq/common_widgets/bullet_point.dart';
 import 'package:parq/generated/l10n.dart';
+import 'package:parq/keys.dart';
 import 'package:parq/results/final_screen_buttons.dart';
 
 class Clearance extends StatefulWidget {
@@ -59,6 +60,7 @@ class _ClearanceState extends State<Clearance>
                 padding: EdgeInsets.symmetric(vertical: 16),
                 child: Text(
                   S.of(context).clearanceTitle,
+                  key: Key(Keys.clearanceTitle),
                   style: Theme.of(context).textTheme.headline6,
                 ),
               ),

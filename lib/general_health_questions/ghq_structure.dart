@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:parq/common_widgets/my_radio_button.dart';
 import 'package:parq/common_widgets/scroll_column_expandable.dart';
 import 'package:parq/general_health_questions/ghq_list_provider.dart';
+import 'package:parq/keys.dart';
 import 'package:provider/provider.dart';
 import 'package:parq/generated/l10n.dart';
 
@@ -54,12 +55,14 @@ class GHQStructure extends StatelessWidget {
                 buttonPadding: EdgeInsets.all(8),
                 children: [
                   MyRadioButton(
+                    key: Key(Keys.ghqYesButton),
                     onChanged: onChanged,
                     groupValue: groupValue,
                     value: true,
                     text: S.of(context).actionButtonYES,
                   ),
                   MyRadioButton(
+                    key: Key(Keys.ghqNoButton),
                     onChanged: onChanged,
                     groupValue: groupValue,
                     value: false,

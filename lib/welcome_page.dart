@@ -1,13 +1,24 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:parq/common_widgets/main_button.dart';
 import 'package:parq/general_health_questions/ghq_main_screen.dart';
+import 'package:parq/keys.dart';
 import 'package:parq/theme.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'generated/l10n.dart';
 
-class WelcomePage extends StatelessWidget {
+class WelcomePage extends StatefulWidget {
   static const id = 'welcome_page';
+
+  @override
+  _WelcomePageState createState() => _WelcomePageState();
+}
+
+class _WelcomePageState extends State<WelcomePage> {
+  void changeLanguage() {
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +40,19 @@ class WelcomePage extends StatelessWidget {
                     height: iconWidth),
                 child: BeatingHeartIcon(
                   iconWidth: iconWidth,
+                ),
+              ),
+              Positioned(
+                top: 20,
+                left: 8,
+                child: Row(
+                  children: [
+                    Icon(Icons.language),
+                    SizedBox(width: 8),
+                    LanguageDropdown(
+                      callback: changeLanguage,
+                    ),
+                  ],
                 ),
               ),
               Center(
@@ -64,6 +88,7 @@ class WelcomePage extends StatelessWidget {
                           Center(
                             child: Container(
                               child: MainButton(
+                                key: Key(Keys.welcomePageButton),
                                 onPressed: () {
                                   Navigator.pushNamed(
                                       context, GHQMainScreen.id);
@@ -104,6 +129,31 @@ class WelcomePage extends StatelessWidget {
             ],
           );
         }),
+      ),
+    );
+  }
+}
+
+class LanguageDropdown extends StatelessWidget {
+  final callback;
+  LanguageDropdown({this.callback});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: DropdownButton<String>(
+        value: Intl.getCurrentLocale(),
+        onChanged: (String newValue) {
+          callback();
+          S.load(Locale(newValue));
+        },
+        items: S.delegate.supportedLocales
+            .map<DropdownMenuItem<String>>((Locale locale) {
+          return DropdownMenuItem<String>(
+            value: locale.languageCode,
+            child: Text(locale.languageCode),
+          );
+        }).toList(),
       ),
     );
   }

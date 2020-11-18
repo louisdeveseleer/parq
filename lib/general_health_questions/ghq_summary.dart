@@ -4,6 +4,7 @@ import 'package:parq/common_widgets/scroll_column_expandable.dart';
 import 'package:parq/general_health_questions/ghq_follow_up.dart';
 import 'package:parq/general_health_questions/ghq_item_model.dart';
 import 'package:parq/general_health_questions/ghq_list_provider.dart';
+import 'package:parq/keys.dart';
 import 'package:parq/results/clearance.dart';
 import 'package:provider/provider.dart';
 import 'package:parq/generated/l10n.dart';
@@ -126,6 +127,7 @@ class GHQSummary extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 8.0),
               child: MainButton(
+                key: Key(Keys.ghqSummaryButton),
                 onPressed: () {
                   if (isNotFit)
                     Navigator.pushNamed(context, GHQFollowUp.id);

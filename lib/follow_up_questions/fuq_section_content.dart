@@ -3,6 +3,7 @@ import 'package:parq/common_widgets/my_radio_button.dart';
 import 'package:parq/common_widgets/scroll_column_expandable.dart';
 import 'package:parq/follow_up_questions/fuq_item_model.dart';
 import 'package:parq/follow_up_questions/fuq_list.dart';
+import 'package:parq/keys.dart';
 import 'package:parq/results/clearance.dart';
 import 'package:parq/results/no_clearance.dart';
 import 'package:provider/provider.dart';
@@ -89,12 +90,14 @@ class _FUQSectionContentState extends State<FUQSectionContent>
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 MyRadioButton(
+                  key: Key(Keys.fuqYesButton),
                   onChanged: onChanged,
                   groupValue: groupValue,
                   value: true,
                   text: S.of(context).actionButtonYES,
                 ),
                 MyRadioButton(
+                  key: Key(Keys.fuqNoButton),
                   onChanged: onChanged,
                   groupValue: groupValue,
                   value: false,

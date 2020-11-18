@@ -107,17 +107,18 @@ class QuestionsSlider extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: Slider(
-            activeColor: Theme.of(context).accentColor,
-            inactiveColor: Theme.of(context).accentColor.withOpacity(0.2),
-            onChanged: (double newValue) => (pageController.animateToPage(
-              newValue.toInt(),
-              curve: Curves.linear,
-              duration: Duration(milliseconds: 200),
-            )),
-            value: currentPosition,
-            min: 0,
-            max: 8,
+          child: SliderTheme(
+            data: SliderTheme.of(context).copyWith(
+              thumbShape: RoundSliderThumbShape(enabledThumbRadius: 2.0),
+            ),
+            child: Slider(
+              activeColor: Theme.of(context).accentColor,
+              inactiveColor: Theme.of(context).accentColor.withOpacity(0.2),
+              onChanged: (_) {},
+              value: currentPosition,
+              min: 0,
+              max: 8,
+            ),
           ),
         ),
       ],

@@ -10,7 +10,8 @@ class MyRadioButton extends StatelessWidget {
     this.groupValue,
     this.value,
     this.text,
-  });
+    Key key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

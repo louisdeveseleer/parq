@@ -3,6 +3,7 @@ import 'package:parq/common_widgets/basic_screen.dart';
 import 'package:parq/common_widgets/main_button.dart';
 import 'package:parq/follow_up_questions/fuq_main_screen.dart';
 import 'package:parq/generated/l10n.dart';
+import 'package:parq/keys.dart';
 
 class GHQFollowUp extends StatelessWidget {
   static const id = 'ghq_follow_up';
@@ -20,6 +21,7 @@ class GHQFollowUp extends StatelessWidget {
               style: Theme.of(context).textTheme.headline6,
             ),
             MainButton(
+              key: Key(Keys.ghqFollowUpButton),
               onPressed: () {
                 Navigator.pushNamed(context, FUQMainScreen.id);
               },

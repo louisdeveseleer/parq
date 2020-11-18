@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:parq/common_widgets/main_button.dart';
 import 'package:parq/generated/l10n.dart';
+import 'package:parq/keys.dart';
 
 class GHQIntro extends StatefulWidget {
   final VoidCallback callback;
@@ -103,6 +104,7 @@ class _GHQIntroState extends State<GHQIntro>
             height: 32,
           ),
           MainButton(
+            key: Key(Keys.ghqIntroButton),
             onPressed: widget.callback,
             child: Text(
               S.of(context).ghqIntroActionButton,

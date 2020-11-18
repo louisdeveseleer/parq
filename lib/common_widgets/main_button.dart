@@ -6,7 +6,8 @@ class MainButton extends StatelessWidget {
   MainButton({
     @required this.onPressed,
     @required this.child,
-  });
+    Key key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
