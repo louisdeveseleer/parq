@@ -1,8 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:parq/common_widgets/launch_url.dart';
+import 'package:package_info/package_info.dart';
 
 void myShowAboutDialog(BuildContext context) async {
+  PackageInfo packageInfo = await PackageInfo.fromPlatform();
+
   return showAboutDialog(
     context: context,
     applicationIcon: SizedBox(
@@ -12,8 +15,8 @@ void myShowAboutDialog(BuildContext context) async {
         child: Image.asset('assets/logo.png'),
       ),
     ),
-    applicationName: 'PAR-Q+',
-    applicationVersion: '1.0.0',
+    applicationName: packageInfo.appName,
+    applicationVersion: packageInfo.version,
     children: [
       RichText(
         text: TextSpan(
